@@ -1,10 +1,10 @@
-import React from 'react'
-import './contact.css'
-import {MdOutlineEmail} from 'react-icons/md'
+import React from "react";
+import "./contact.css";
+import { MdOutlineEmail } from "react-icons/md";
 import { SiLinkedin } from "react-icons/si";
 import { BsWhatsapp } from "react-icons/bs";
-import  { useRef } from "react";
-import emailjs from 'emailjs-com'
+import { useRef } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const form = useRef();
@@ -12,15 +12,14 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_t9b0j3h",
-        "template_xhmgx7r",
-        form.current,
-        "D3WKGHJ_wQ93y0YxM"
-      )
-      
-      e.target.reset();
+    emailjs.sendForm(
+      "service_t9b0j3h",
+      "template_xhmgx7r",
+      form.current,
+      "D3WKGHJ_wQ93y0YxM"
+    );
+
+    e.target.reset();
   };
   return (
     <section id="contact">
@@ -33,7 +32,11 @@ const Contact = () => {
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5>jayant00025@gmail.com</h5>
-            <a href="mailto:jayant00025@gmail.com" target="_blank">
+            <a
+              href="mailto:jayant00025@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               Send a message
             </a>
           </article>
@@ -44,6 +47,7 @@ const Contact = () => {
             <a
               href="https://linkedin.com/in/jayant-batra-933104219"
               target="_blank"
+              rel="noreferrer"
             >
               Send a message
             </a>
@@ -52,7 +56,11 @@ const Contact = () => {
             <BsWhatsapp className="contact__option-icon" />
             <h4>Whatsapp</h4>
             <h5>+91 72063-41354</h5>
-            <a href="https://wa.me/+917206341354" target="_blank">
+            <a
+              href="https://wa.me/+917206341354"
+              target="_blank"
+              rel="noreferrer"
+            >
               Send a message
             </a>
           </article>
@@ -79,6 +87,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;
