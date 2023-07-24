@@ -1,72 +1,90 @@
+/* services.css */
+
+#services {
+  text-align: center;
+}
+
 .services__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* To stack the articles vertically */
 }
 
 .service {
-    background: var(--color-bg-variant);
-    border-radius: 0 0 2rem 2rem;
-    border: 1px solid var(--color-primary);
-    height: fit-content;
-    transition: var(--transition);
+  background: var(--color-bg-variant);
+  border-radius: 2rem;
+  border: 1px solid var(--color-primary);
+  width: 80%; /* Adjust the width as needed */
+  max-width: 900px; /* Add a max-width to limit the container's width */
+  margin-bottom: 3rem; /* Add some space between each service article */
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 
 .service:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
 }
 
 .service__head {
-    background: var(--color-primary);
-    padding: 2rem;
-    border-radius: 0 0 2rem 2rem;
-    box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+  background: var(--color-primary);
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Add some space between the avatar and the h3 element */
 }
 
-.service__head h3{
-    color: var(--color-bg);
-    font-size: 1rem;      
-    text-align: center;
+.service__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.service__head h3 {
+  color: var(--color-bg);
+  font-size: 1rem;
 }
 
 .service__list {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .service__list li {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .service__list-icon {
-    color: var(--color-primary);
-    margin-top: 2px;
+  color: var(--color-primary);
+  margin-top: 2px;
+  font-size: 4rem;
 }
 
 .service__list p {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 /* ============= MEDIA QUERIES (Medium Devices) ================== */
- @media screen  and (max-width: 1024px){
-    .services__container {
-       grid-template-columns: 1fr 1fr;
-       gap: 2rem;
-    }
+@media screen and (max-width: 1024px) {
+  .services__container {
+    flex-direction: column; /* Stack the articles vertically on medium devices */
+    align-items: center;
+  }
 
-    .service {
-        height: auto;
-    }
- }
+  .service {
+    width: 90%;
+  }
+}
 
- /* ============= MEDIA QUERIES (small Devices) ================== */
- @media screen  and (max-width: 600px){
-     .services__container {
-         grid-template-columns: 1fr;
-         gap: 1.5rem;
-     }
-
- }
+/* ============= MEDIA QUERIES (small Devices) ================== */
+@media screen and (max-width: 600px) {
+  .service {
+    width: 100%;
+  }
+}

@@ -1,73 +1,82 @@
-import React from 'react'
-import './testimonials.css'
-import AVTR1 from '../../assets/avatar1.jpg'
-import AVTR2 from '../../assets/avatar2.jpg'
-import AVTR3 from '../../assets/avatar3.jpg'
-import AVTR4 from '../../assets/avatar4.jpg'
+import React from "react";
+import "./testimonials.css";
+import AVTR4 from "../../assets/jpmc.jpg";
+import AVTR1 from "../../assets/Intro-BD.jpg";
+import AVTR2 from "../../assets/BD-M&M.jpg";
+import AVTR3 from "../../assets/BD-I&P.jpg";
+import AVTR5 from "../../assets/Project-Managment.jpg";
+import AVTR6 from "../../assets/AD.jpg";
 
 // import Swiper core and required modules
-import { Pagination,Navigation } from 'swiper';
+import { Pagination, Navigation } from "swiper";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 
 const data = [
   {
     avatar: AVTR1,
-    name: "Dave Batra",
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit omnis ea debitis facere deleniti numquam, sunt atque? Quasat sit ipsam nobis commodi delectus veniam accusamus dolorem ipsum rem!mpedit omnis ea debitis facere deleniti numquam, sunt atque? Quas at sit ipsam nobis commodi dele'
+    name: "Coursera - Introduction to Big Data",
   },
   {
     avatar: AVTR2,
-    name: "Dave Batra",
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit omnis ea debitis facere deleniti numquam, sunt atque? Quasat sit ipsam nobis commodi delectus veniam accusamus dolorem ipsum rem!mpedit omnis ea debitis facere deleniti numquam, sunt atque? Quas at sit ipsam nobis commodi dele'
+    name: "Coursera - Big Data Modeling and Management System",
   },
   {
     avatar: AVTR3,
-    name: "Dave Batra",
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit omnis ea debitis facere deleniti numquam, sunt atque? Quasat sit ipsam nobis commodi delectus veniam accusamus dolorem ipsum rem!mpedit omnis ea debitis facere deleniti numquam, sunt atque? Quas at sit ipsam nobis commodi dele'
+    name: "Coursera - Big Data Integration and Processing",
   },
   {
     avatar: AVTR4,
-    name: "Dave Batra",
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum impedit omnis ea debitis facere deleniti numquam, sunt atque? Quasat sit ipsam nobis commodi delectus veniam accusamus dolorem ipsum rem!mpedit omnis ea debitis facere deleniti numquam, sunt atque? Quas at sit ipsam nobis commodi dele'
+    name: "Forage - Software Engineering Virtual Experience By JP Morgan Chase & Co.",
   },
-]
+  {
+    avatar: AVTR5,
+    name: "Coursera & Google - Foundations of Project Management",
+  },
+  {
+    avatar: AVTR6,
+    name: "Coursera - Build an Anomaly Detection Model using PyCaret",
+  },
+];
 
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <h5>Review from clients</h5>
-      <h2>Testimonials</h2>
+      <h5>Certifications Acquired 5+</h5>
+      <h2>Certifications </h2>
 
       <Swiper
         className="container testimonials__container"
         // install Swiper modules
-        modules={[ Pagination,Navigation]}
+        modules={[Pagination, Navigation]}
         spaceBetween={40}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
       >
-        {data.map(({ avatar, name, review }, index) => {
+        {data.map(({ avatar, name }, index) => {
           return (
             <SwiperSlide key={index} className="testimonial">
               <div className="client__avatar">
-                <img src={avatar} />
+                <img src={avatar} alt="Avatar" className="new" />
               </div>
-              <h5 className="client__name">{name}</h5>
-              <small className="client__review">{review}</small>
+              {/* <h5 className="client__name">{name}</h5> */}
+              <small className="client__review">
+                <span style={{ fontWeight: "bold", color: "white" }}>
+                  {name}
+                </span>
+              </small>
             </SwiperSlide>
           );
         })}
       </Swiper>
     </section>
   );
-}
+};
 
-export default Testimonials
+export default Testimonials;
